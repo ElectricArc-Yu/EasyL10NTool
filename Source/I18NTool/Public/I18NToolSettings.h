@@ -7,6 +7,8 @@
 #include "UObject/Object.h"
 #include "I18NToolSettings.generated.h"
 
+
+
 /**
  * 
  */
@@ -17,14 +19,28 @@ class I18NTOOL_API UI18NToolSettings : public UObject
 public:
 	UPROPERTY(EditAnywhere, Config, Category="L10N")
 	TArray<ELanguage> SupportedLanguage = {ELanguage::English};
+
 	UPROPERTY(EditAnywhere, Config, Category="L10N")
-	ELanguage CurrentGlobalLanguage;
+	bool bIUnderStandIsNotSuggestedToChangeDefaultLanguage = false;
+
+	// Which means the original language of the game none of the translation is applied
+	UPROPERTY(EditAnywhere, Config, Category="L10N", meta=(EditCondition="bIUnderStandIsNotSuggestedToChangeDefaultLanguage"))
+	ELanguage DefaultLanguage = ELanguage::English;
+
+	UPROPERTY(EditAnywhere, Category="L10N")
+	ELanguage DebugLanguage = ELanguage::English;
+	
+	UPROPERTY(Config)
+	ELanguage CurrentGlobalLanguage = DefaultLanguage;
 
 	// Getters
 	TArray<ELanguage> GetSupportedLanguage() const { return SupportedLanguage; }
 	ELanguage GetCurrentGlobalLanguage() const { return CurrentGlobalLanguage; }
-
-	// Setters
-	void SetCurrentGlobalLanguage(const ELanguage InLanguage) { CurrentGlobalLanguage = InLanguage; }
+	ELanguage GetDefaultLanguage() const { return DefaultLanguage; }
 	
+	// Setters
+	void SetCurrentGlobalLanguage(const ELanguage InLanguage);
+	
+private:
+	virtual void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
 };

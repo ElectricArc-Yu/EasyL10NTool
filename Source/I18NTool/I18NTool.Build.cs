@@ -31,6 +31,7 @@ public class I18NTool : ModuleRules
 				"InputCore",
 				"Kismet" ,
 				"I18NTool",
+				"UMG"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);

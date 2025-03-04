@@ -23,12 +23,12 @@ void FI18NToolModule::StartupModule()
 	
 	PluginCommands = MakeShareable(new FUICommandList);
 
-	PluginCommands->MapAction(
-		FI18NToolCommands::Get().PluginAction,
-		FExecuteAction::CreateRaw(this, &FI18NToolModule::PluginButtonClicked),
-		FCanExecuteAction());
+	// PluginCommands->MapAction(
+	// 	FI18NToolCommands::Get().PluginAction,
+	// 	FExecuteAction::CreateRaw(this, &FI18NToolModule::PluginButtonClicked),
+	// 	FCanExecuteAction());
 
-	UToolMenus::RegisterStartupCallback(FSimpleMulticastDelegate::FDelegate::CreateRaw(this, &FI18NToolModule::RegisterMenus));
+	//UToolMenus::RegisterStartupCallback(FSimpleMulticastDelegate::FDelegate::CreateRaw(this, &FI18NToolModule::RegisterMenus));
 
 	// Registering the settings
 
@@ -61,41 +61,41 @@ void FI18NToolModule::ShutdownModule()
 	}
 }
 
-void FI18NToolModule::PluginButtonClicked()
-{
-	// Put your "OnButtonClicked" stuff here
-	FText DialogText = FText::Format(
-							LOCTEXT("PluginButtonDialogText", "Add code to {0} in {1} to override this button's actions"),
-							FText::FromString(TEXT("FI18NToolModule::PluginButtonClicked()")),
-							FText::FromString(TEXT("I18NTool.cpp"))
-					   );
-	FMessageDialog::Open(EAppMsgType::Ok, DialogText);
-}
-
-void FI18NToolModule::RegisterMenus()
-{
-	// Owner will be used for cleanup in call to UToolMenus::UnregisterOwner
-	FToolMenuOwnerScoped OwnerScoped(this);
-
-	{
-		UToolMenu* Menu = UToolMenus::Get()->ExtendMenu("LevelEditor.MainMenu.Window");
-		{
-			FToolMenuSection& Section = Menu->FindOrAddSection("WindowLayout");
-			Section.AddMenuEntryWithCommandList(FI18NToolCommands::Get().PluginAction, PluginCommands);
-		}
-	}
-
-	{
-		UToolMenu* ToolbarMenu = UToolMenus::Get()->ExtendMenu("LevelEditor.LevelEditorToolBar.PlayToolBar");
-		{
-			FToolMenuSection& Section = ToolbarMenu->FindOrAddSection("PluginTools");
-			{
-				FToolMenuEntry& Entry = Section.AddEntry(FToolMenuEntry::InitToolBarButton(FI18NToolCommands::Get().PluginAction));
-				Entry.SetCommandList(PluginCommands);
-			}
-		}
-	}
-}
+// void FI18NToolModule::PluginButtonClicked()
+// {
+// 	// Put your "OnButtonClicked" stuff here
+// 	FText DialogText = FText::Format(
+// 							LOCTEXT("PluginButtonDialogText", "Add code to {0} in {1} to override this button's actions"),
+// 							FText::FromString(TEXT("FI18NToolModule::PluginButtonClicked()")),
+// 							FText::FromString(TEXT("I18NTool.cpp"))
+// 					   );
+// 	FMessageDialog::Open(EAppMsgType::Ok, DialogText);
+// }
+//
+// void FI18NToolModule::RegisterMenus()
+// {
+// 	// Owner will be used for cleanup in call to UToolMenus::UnregisterOwner
+// 	FToolMenuOwnerScoped OwnerScoped(this);
+//
+// 	{
+// 		UToolMenu* Menu = UToolMenus::Get()->ExtendMenu("LevelEditor.MainMenu.Window");
+// 		{
+// 			FToolMenuSection& Section = Menu->FindOrAddSection("WindowLayout");
+// 			Section.AddMenuEntryWithCommandList(FI18NToolCommands::Get().PluginAction, PluginCommands);
+// 		}
+// 	}
+//
+// 	{
+// 		UToolMenu* ToolbarMenu = UToolMenus::Get()->ExtendMenu("LevelEditor.LevelEditorToolBar.PlayToolBar");
+// 		{
+// 			FToolMenuSection& Section = ToolbarMenu->FindOrAddSection("PluginTools");
+// 			{
+// 				FToolMenuEntry& Entry = Section.AddEntry(FToolMenuEntry::InitToolBarButton(FI18NToolCommands::Get().PluginAction));
+// 				Entry.SetCommandList(PluginCommands);
+// 			}
+// 		}
+// 	}
+// }
 
 #undef LOCTEXT_NAMESPACE
 	

@@ -4,6 +4,8 @@
 
 #include "Modules/ModuleManager.h"
 
+
+
 class FToolBarBuilder;
 class FMenuBuilder;
 
@@ -16,12 +18,12 @@ public:
 	virtual void ShutdownModule() override;
 	
 	/** This function will be bound to Command. */
-	void PluginButtonClicked();
+	//void PluginButtonClicked();
 	
 private:
 
-	void RegisterMenus();
-
+	//void RegisterMenus();
+	
 
 private:
 	TSharedPtr<class FUICommandList> PluginCommands;
