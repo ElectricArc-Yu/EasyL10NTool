@@ -37,6 +37,11 @@ The advantages of this plugin:
    - Inherit your GameMode from LocalizationedGameMode, and use that GameMode in each level you want to use localization.
 5. Enjoy simple localization.
 
+# Registering in current language changed
+
+1. Call `GetLocalizationManager` in your Blueprint.
+2. Bind `OnCurrentGlobalLanguageChanged` event to your function.
+
 # Documentation
 
 BlueprintLibrary : [L10NToolBlueprintLibrary](BPLDocumentation.md)
