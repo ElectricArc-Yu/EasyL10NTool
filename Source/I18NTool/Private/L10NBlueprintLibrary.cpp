@@ -2,6 +2,7 @@
 
 #include "L10NBlueprintLibrary.h"
 
+#include "EngineUtils.h"
 #include "L10NEnums.h"
 #include "I18NToolSettings.h"
 #include "L10NStructs.h"
@@ -710,6 +711,13 @@ ALocalizationManager* UL10NBlueprintLibrary::GetLocalizationManager(const UObjec
 	if (ALocalizationedGameMode* GameMode = Cast<ALocalizationedGameMode>(UGameplayStatics::GetGameMode(WorldContextObject)))
 	{
 		return GameMode->GetLocalizationManagerInstance();
+	}
+	if (UWorld* World = GEngine->GetWorldFromContextObjectChecked(WorldContextObject))
+	{
+		for (TActorIterator<ALocalizationManager> It(World); It; ++It)
+		{
+			return *It;
+		}
 	}
 	return nullptr;
 }
