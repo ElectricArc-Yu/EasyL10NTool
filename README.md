@@ -19,3 +19,24 @@ The advantages of this plugin:
 * Provides direct usage methods called Quick Setters like Set Text With L10N.
 * Provides Pure Getters for the configuration of currently supported languages (Incluede text return and enum return) and the current language.
 * Provides a boradcast OnCurrentGlobalLanguageChanged.
+
+---
+
+# Buy my plugin on Unreal Engine Marketplace
+
+- On Fab.com : 
+- Buy me a coffee : 
+
+# How to merge to your project
+
+1. If you buy this plugin on Fab.com just install in Epic Games Launcher -> Unreal Engine -> Library -> Install to Engine. And then you can ignore remaining steps.
+2. Download .zip file from [release page](https://github.com/ElectricArc-Yu/EasyL10NTool/releases/latest)
+3. Unzip the downloaded file into your project's root folder to merge the plugin into your project.
+4. Get choose using way :
+   - Put LocalizationManagerActor into each level you want to use localization.
+   - Inherit your GameMode from LocalizationedGameMode, and use that GameMode in each level you want to use localization.
+5. Enjoy simple localization.
+
+# Documentation
+
+BlueprintLibrary : [L10NToolBlueprintLibrary](BPLDocumentation.md)
