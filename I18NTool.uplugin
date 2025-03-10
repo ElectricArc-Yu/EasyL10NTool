@@ -6,10 +6,10 @@
 	"Description": "A lightweight and easily configurable tool for reading localized content.",
 	"Category": "Localization",
 	"CreatedBy": "ElectricArc",
-	"CreatedByURL": "",
+	"CreatedByURL": "https://space.bilibili.com/2229698",
 	"DocsURL": "",
 	"MarketplaceURL": "",
-	"SupportURL": "",
+	"SupportURL": "https://github.com/ElectricArc-Yu/EasyL10NTool/issues",
 	"CanContainContent": true,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
@@ -20,5 +20,6 @@
 			"Type": "Runtime",
 			"LoadingPhase": "PreDefault"
 		}
-	]
+	],
+	"EditorCustomVirtualPath": "Plugins/I18NTool"
 }
