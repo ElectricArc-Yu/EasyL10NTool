@@ -1,10 +1,8 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "I18NToolStyle.h"
-#include "I18NTool.h"
 #include "Framework/Application/SlateApplication.h"
 #include "Styling/SlateStyleRegistry.h"
-#include "Slate/SlateGameResources.h"
 #include "Interfaces/IPluginManager.h"
 #include "Styling/SlateStyleMacros.h"
 
@@ -38,9 +36,9 @@ FName FI18NToolStyle::GetStyleSetName()
 const FVector2D Icon16x16(16.0f, 16.0f);
 const FVector2D Icon20x20(20.0f, 20.0f);
 
-TSharedRef< FSlateStyleSet > FI18NToolStyle::Create()
+TSharedRef<FSlateStyleSet> FI18NToolStyle::Create()
 {
-	TSharedRef< FSlateStyleSet > Style = MakeShareable(new FSlateStyleSet("I18NToolStyle"));
+	TSharedRef<FSlateStyleSet> Style = MakeShareable(new FSlateStyleSet("I18NToolStyle"));
 	Style->SetContentRoot(IPluginManager::Get().FindPlugin("I18NTool")->GetBaseDir() / TEXT("Resources"));
 
 	Style->Set("I18NTool.PluginAction", new IMAGE_BRUSH_SVG(TEXT("PlaceholderButtonIcon"), Icon20x20));

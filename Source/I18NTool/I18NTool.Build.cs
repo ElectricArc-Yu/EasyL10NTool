@@ -1,64 +1,68 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
 using UnrealBuildTool;
 
 public class I18NTool : ModuleRules
 {
 	public I18NTool(ReadOnlyTargetRules Target) : base(Target)
 	{
-		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-		
+		// 禁用预编译头文件
+		PCHUsage = PCHUsageMode.NoPCHs; 
+
 		PublicIncludePaths.AddRange(
-			new string[] {
-				// ... add public include paths required here ...
-			}
-			);
-				
-		
-		PrivateIncludePaths.AddRange(
-			new string[] {
-				// ... add other private include paths required here ...
-			}
-			);
-			
-		
-		PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core", 
-				"CoreUObject", 
-				"Engine", 
+				// ... add public include paths required here ...
+			}
+		);
+
+		PrivateIncludePaths.AddRange(
+			new string[]
+			{
+				// ... add other private include paths required here ...
+			}
+		);
+
+		PublicDependencyModuleNames.AddRange(
+			new[]
+			{
+				"Core",
+				"CoreUObject",
+				"Engine",
 				"InputCore",
-				"Kismet" ,
-				"I18NTool",
 				"UMG"
 				// ... add other public dependencies that you statically link with here ...
 			}
-			);
-			
-		
+		);
+
 		PrivateDependencyModuleNames.AddRange(
-			new string[]
+			new[]
 			{
 				"Projects",
 				"InputCore",
-				"EditorFramework",
-				"UnrealEd",
-				"ToolMenus",
 				"CoreUObject",
 				"Engine",
 				"Slate",
-				"SlateCore",
+				"SlateCore"
 				// ... add private dependencies that you statically link with here ...	
 			}
-			);
-		
-		
+		);
+
+		if (Target.bBuildEditor) PrivateDependencyModuleNames.AddRange(new[]
+		{
+			"Settings",
+			"EditorFramework", 
+			"UnrealEd", 
+			"EditorStyle", 
+			"Kismet" , 
+			"EditorSubsystem"
+		});
+
 		DynamicallyLoadedModuleNames.AddRange(
 			new string[]
 			{
 				// ... add any modules that your module loads dynamically here ...
 			}
-			);
+		);
+
+		PrivateIncludePathModuleNames.AddRange(new[] { "I18NTool" });
 	}
 }

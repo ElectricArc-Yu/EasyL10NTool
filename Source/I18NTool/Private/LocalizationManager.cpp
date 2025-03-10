@@ -10,8 +10,8 @@ ALocalizationManager::ALocalizationManager()
 {
 	// Disable tick
 	PrimaryActorTick.bCanEverTick = false;
-	
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	SupportedLanguage = {ELanguage::English};
 	DefaultLanguage = ELanguage::English;
@@ -45,7 +45,6 @@ void ALocalizationManager::BeginPlay()
 void ALocalizationManager::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
 }
 
 void ALocalizationManager::RuntimeSetCurrentGlobalLanguage(const ELanguage InLanguage)

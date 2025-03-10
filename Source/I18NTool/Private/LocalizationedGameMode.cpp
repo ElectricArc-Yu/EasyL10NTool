@@ -1,7 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "LocalizationedGameMode.h"
+#include "Engine/World.h"
+#include "GameFramework/Actor.h"
+
 
 void ALocalizationedGameMode::BeginPlay()
 {

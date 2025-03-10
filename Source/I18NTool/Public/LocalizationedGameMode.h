@@ -14,13 +14,14 @@ UCLASS()
 class I18NTOOL_API ALocalizationedGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Classes, meta = (DisplayName = "Localization Manager Class"))
 	TSubclassOf<ALocalizationManager> LocalizationManagerClass = ALocalizationManager::StaticClass();
 
 	virtual void BeginPlay() override;
-	ALocalizationManager* GetLocalizationManagerInstance() const {return LocalizationManagerInstance;}
+	ALocalizationManager* GetLocalizationManagerInstance() const { return LocalizationManagerInstance; }
+
 private:
 	UPROPERTY()
 	ALocalizationManager* LocalizationManagerInstance;

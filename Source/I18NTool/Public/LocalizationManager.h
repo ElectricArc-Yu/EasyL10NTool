@@ -13,8 +13,8 @@ UCLASS()
 class I18NTOOL_API ALocalizationManager : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	ALocalizationManager();
 
@@ -22,10 +22,10 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	
+
 	// Variables
 	TArray<ELanguage> SupportedLanguage;
 	ELanguage DefaultLanguage;
@@ -39,5 +39,3 @@ public:
 	// Setters
 	void RuntimeSetCurrentGlobalLanguage(const ELanguage InLanguage);
 };
-
-

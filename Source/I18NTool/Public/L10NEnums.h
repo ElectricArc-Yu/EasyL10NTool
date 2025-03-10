@@ -1,9 +1,9 @@
 ﻿#pragma once
+#include "UObject/ObjectMacros.h" 
+#include "Engine/UserDefinedEnum.h" 
 
 class L10NEnums
 {
-public:
-	
 };
 
 UENUM(BlueprintType)

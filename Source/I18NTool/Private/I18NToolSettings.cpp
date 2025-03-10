@@ -2,10 +2,9 @@
 
 
 #include "I18NToolSettings.h"
-
-#include "Blueprint/UserWidget.h"
-#include "Internationalization/Culture.h"
-#include "Kismet/GameplayStatics.h"
+#include "Misc/MessageDialog.h"
+#include "Engine/World.h"
+#include "Engine/Engine.h"
 
 void UI18NToolSettings::SetCurrentGlobalLanguage(const ELanguage InLanguage)
 {
@@ -13,16 +12,18 @@ void UI18NToolSettings::SetCurrentGlobalLanguage(const ELanguage InLanguage)
 }
 
 
-void UI18NToolSettings::PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent)
+void UI18NToolSettings::PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent)
 {
-	UObject::PostEditChangeProperty(PropertyChangedEvent);
 	FString Name = PropertyChangedEvent.Property->GetName();
-	if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UI18NToolSettings, SupportedLanguage))
+	if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(
+		UI18NToolSettings, SupportedLanguage))
 	{
 		if (SupportedLanguage.IsEmpty())
 		{
 			SupportedLanguage.Add(ELanguage::English);
-			FMessageDialog::Open(EAppMsgType::Ok, FText::FromString(TEXT("At least one language must be supported. English is added by default.")));
+			FMessageDialog::Open(EAppMsgType::Ok,
+			                     FText::FromString(
+				                     TEXT("At least one language must be supported. English is added by default.")));
 		}
 		TSet<ELanguage> UniqueLanguages;
 		for (int32 i = 0; i < (SupportedLanguage.Num() >= 28 ? 28 : SupportedLanguage.Num()); ++i)
@@ -53,8 +54,8 @@ void UI18NToolSettings::PostEditChangeProperty(FPropertyChangedEvent& PropertyCh
 			{
 				SupportedLanguage.RemoveAt(i);
 			}
-			FMessageDialog::Open(EAppMsgType::Ok, FText::FromString(TEXT("All languages are supported, no duplicates allowed.")));
+			FMessageDialog::Open(EAppMsgType::Ok,
+			                     FText::FromString(TEXT("All languages are supported, no duplicates allowed.")));
 		}
 	}
 }
-
