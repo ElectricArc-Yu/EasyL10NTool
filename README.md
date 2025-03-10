@@ -42,6 +42,19 @@ The advantages of this plugin:
 1. Call `GetLocalizationManager` in your Blueprint.
 2. Bind `OnCurrentGlobalLanguageChanged` event to your function.
 
+# How to create data for localization
+
+1. Create a new Data Table in Unreal Engine.
+2. Choose 'FL10NPlainTextTable' or ‘FL10NAssetsTable’ as the row type.
+3. Create a spreadsheet with the following columns:
+   - --- : The Data Table Row Name.
+   - English : The English text of the data.
+   - ... : The text of the data in other languages. (You can add as many columns as you want.)
+4. Import the spreadsheet into the Data Table.
+5. If you don't want to adapt with all languages listed in steam, you can remove them form column list. And set below options to true in created Data Table Detail page.
+   - Ignore Missing Fields : true
+   - Ignore Extra Fields : true
+
 # Documentation
 
 BlueprintLibrary : [L10NToolBlueprintLibrary](BPLDocumentation.md)
