@@ -22,10 +22,11 @@ The advantages of this plugin:
 
 ---
 
-# Buy my plugin on Unreal Engine Marketplace
+# Support me
 
-- On Fab.com : 
-- Buy me a coffee : 
+- Buy this on Fab.com : 
+- Buy me a coffee :
+- Leave me a star !
 
 # How to merge
 
