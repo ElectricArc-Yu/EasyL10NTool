@@ -14,7 +14,7 @@ The advantages of this plugin:
 
 * It is extremely easy to configure and use.
 * The lightweight structure reduces the learning cost and the difficulty of use. 
-* With extremely low invasiveness (It only requires inheriting parent class LocalizationedGameMode.), it can be more easily integrated into the running project. 
+* With extremely low inventiveness (It only requires inheriting parent class LocalizationedGameMode.), it can be more easily integrated into the running project. 
 * Provides highly customizable basic localization data acquisition methods (Basic Getters).
 * Provides methods to directly acquire data as Audio, Dialogue, or Texture2D.
 * Provides direct usage methods called Quick Setters like Set Text With L10N.

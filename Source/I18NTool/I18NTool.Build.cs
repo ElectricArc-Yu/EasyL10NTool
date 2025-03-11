@@ -5,7 +5,8 @@ public class I18NTool : ModuleRules
 	public I18NTool(ReadOnlyTargetRules Target) : base(Target)
 	{
 		// 禁用预编译头文件
-		PCHUsage = PCHUsageMode.NoPCHs; 
+		PCHUsage = PCHUsageMode.Default;
+		PrivatePCHHeaderFile = "Public/I18NTool.h";
 
 		PublicIncludePaths.AddRange(
 			new string[]
