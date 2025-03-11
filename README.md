@@ -5,6 +5,7 @@ Easy Localization & Internationalization Tool Plugin For Unreal Engine.
 ---
 
 @ Author : Electric Arc
+
 @ Advise, Suggestion and Bug Report : Feel free to create Issue.
 
 ---
@@ -24,9 +25,9 @@ The advantages of this plugin:
 
 # Support me
 
-- Buy this on Fab.com : 
-- Buy me a coffee :
-- Leave me a star !
+- On Fab.com : https://www.fab.com/listings/48e0603f-8d40-4517-9bf0-a7199386e996
+- Buy me a coffee : Buy this plugin personal version on Fab.com and leave me a star on this page.
+- Feel good : Click the star button on top right of this page.
 
 # How to merge
 
