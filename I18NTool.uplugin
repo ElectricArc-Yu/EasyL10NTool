@@ -7,9 +7,10 @@
 	"Category": "Localization",
 	"CreatedBy": "ElectricArc",
 	"CreatedByURL": "https://space.bilibili.com/2229698",
-	"DocsURL": "",
-	"MarketplaceURL": "",
-	"SupportURL": "https://github.com/ElectricArc-Yu/EasyL10NTool/issues",
+	"DocsURL": "https://github.com/ElectricArc-Yu/EasyL10NTool/wiki",
+	"MarketplaceURL": "https://www.fab.com/listings/48e0603f-8d40-4517-9bf0-a7199386e996",
+	"FabURL": "com.epicgames.launcher://ue/Fab/product/48e0603f-8d40-4517-9bf0-a7199386e996",
+	"SupportURL": "https://mailto:EAforWork@outlook.com",
 	"CanContainContent": true,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
@@ -18,7 +19,10 @@
 		{
 			"Name": "I18NTool",
 			"Type": "Runtime",
-			"LoadingPhase": "PreDefault"
+			"LoadingPhase": "PreDefault",
+			"PlatformAllowList": [
+				"Win64"
+			]
 		}
 	],
 	"EditorCustomVirtualPath": "Plugins/I18NTool"

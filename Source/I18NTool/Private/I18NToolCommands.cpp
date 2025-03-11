@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+// Copyright YuChenhaoran,  All Rights Reserved. publish in 2025
 
 #include "I18NToolCommands.h"
 

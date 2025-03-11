@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿// Copyright YuChenhaoran,  All Rights Reserved. publish in 2025
+
+#pragma once
 
 #include "Engine/DataTable.h"
 #include "L10NStructs.generated.h"

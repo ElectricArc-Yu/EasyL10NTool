@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿// Copyright YuChenhaoran,  All Rights Reserved. publish in 2025
+
+#pragma once
 #include "UObject/ObjectMacros.h" 
 #include "Engine/UserDefinedEnum.h" 
 
