@@ -1,3 +1,4 @@
+// Copyright YuChenhaoran,  All Rights Reserved. publish in 2025
 using UnrealBuildTool;
 
 public class I18NTool : ModuleRules
